@@ -36,7 +36,7 @@ save.seq.vector=function(seq.list, xcov, circ, ofn.fasta, ofn.table, line.width=
     save.table(df, ofn.table)
 }
 
-gen.example=function(ofn.prefix="x")
+gen.example=function(ofn.fasta, ofn.table)
 {
     get.seq=function(N) {
         nts = c("A", "G", "C", "T")
@@ -49,7 +49,5 @@ gen.example=function(ofn.prefix="x")
     seq.list = list(m1=c(a,p,b), m2=p)
     xcov = c(100,1000)
     circ = c(F,T)
-    save.seq.vector(seq.list=seq.list, xcov=xcov, circ=circ,
-                    ofn.fasta=paste(ofn.prefix,".fasta",sep=""),
-                    ofn.table=paste(ofn.prefix,".tab",sep=""))
+    save.seq.vector(seq.list=seq.list, xcov=xcov, circ=circ, ofn.fasta=ofn.fasta, ofn.table=ofn.table)
 }
