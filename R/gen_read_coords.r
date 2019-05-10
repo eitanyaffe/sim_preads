@@ -1,4 +1,4 @@
-gen.read.coords=function(genome.table.ifn, base.length=100, insert=300, insert.sd=200, read.length=150, ofn)
+gen.read.coords=function(genome.table.ifn, insert=200, insert.sd=100, read.length=150, ofn)
 {
     options(stringsAsFactors=F)
     table = read.delim(genome.table.ifn)
@@ -24,7 +24,7 @@ gen.read.coords=function(genome.table.ifn, base.length=100, insert=300, insert.s
 
         N = ceiling((xcov*contig.size) / (2*read.length))
         start = floor(runif(N, min=0, max=contig.size))
-        end = pmax(start + base.length, start + insert + round(rnorm(N, sd=insert.sd)))
+        end = pmax(start + 1, start + 2*read.length + insert + round(rnorm(N, sd=insert.sd)))
         strand = ifelse(runif(N) > 0.5, 1, -1)
 
         start1 = ifelse(strand ==  1, start, end-read.length)
@@ -34,7 +34,7 @@ gen.read.coords=function(genome.table.ifn, base.length=100, insert=300, insert.s
             contig1=contig, start1=start1, end1=start1+read.length, strand1=strand,
             contig2=contig, start2=start2, end2=start2+read.length, strand2=-strand)
 
-        if (circ) {
+        if (!circ) {
             df = df[pmax(df$start1,df$start2,df$end1,df$end2) < contig.size,]
         }
         result = rbind(result, df)

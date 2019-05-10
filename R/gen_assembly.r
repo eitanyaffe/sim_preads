@@ -45,9 +45,9 @@ gen.example=function(ofn.prefix="x")
     }
     a = get.seq(10000)
     b = get.seq(10000)
-    p = get.seq(1000)
+    p = get.seq(2000)
     seq.list = list(m1=c(a,p,b), m2=p)
-    xcov = c(1,10)
+    xcov = c(100,1000)
     circ = c(F,T)
     save.seq.vector(seq.list=seq.list, xcov=xcov, circ=circ,
                     ofn.fasta=paste(ofn.prefix,".fasta",sep=""),
