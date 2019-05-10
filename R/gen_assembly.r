@@ -36,13 +36,14 @@ save.seq.vector=function(seq.list, xcov, circ, ofn.fasta, ofn.table, line.width=
     save.table(df, ofn.table)
 }
 
+get.seq=function(N) {
+    nts = c("A", "G", "C", "T")
+    seq.i = floor(runif(N) * 4) + 1
+    seq.v = nts[seq.i]
+}
+
 gen.example=function(ofn.fasta, ofn.table)
 {
-    get.seq=function(N) {
-        nts = c("A", "G", "C", "T")
-        seq.i = floor(runif(N) * 4) + 1
-        seq.v = nts[seq.i]
-    }
     a = get.seq(10000)
     b = get.seq(10000)
     p = get.seq(2000)
@@ -50,4 +51,10 @@ gen.example=function(ofn.fasta, ofn.table)
     xcov = c(100,1000)
     circ = c(F,T)
     save.seq.vector(seq.list=seq.list, xcov=xcov, circ=circ, ofn.fasta=ofn.fasta, ofn.table=ofn.table)
+}
+
+# you can implement various assemblies here: set1, set2, ...
+gen.set1=function(ofn.fasta, ofn.table)
+{
+    stop("TBD")
 }

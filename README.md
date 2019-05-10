@@ -9,5 +9,5 @@ git clone git@github.com:eitanyaffe/sim_preads.git
 See example.sh for the relevant bash commands. To run the example execute on the command line:
 ```
 cd sim_preads
-bash example.sh
+bash generate.sh example
 ```
