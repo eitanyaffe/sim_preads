@@ -9,6 +9,8 @@ mkdir -p out
 	   genome.table.ifn="out/example.tab" \
 	   insert=200 insert.sd=100 read.length=150 \
 	   ofn="out/example.coords"
+
+# plotting
 ./R_call.r R/plot_read_distrib.r plot.read.distrib \
 	   ifn="out/example.coords" \
 	   fdir="plots"
