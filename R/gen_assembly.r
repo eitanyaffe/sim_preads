@@ -53,8 +53,12 @@ gen.example=function(ofn.fasta, ofn.table)
     save.seq.vector(seq.list=seq.list, xcov=xcov, circ=circ, ofn.fasta=ofn.fasta, ofn.table=ofn.table)
 }
 
-# you can implement various assemblies here: set1, set2, ...
-gen.set1=function(ofn.fasta, ofn.table)
+gen.lin=function(ofn.fasta, ofn.table)
+{
+    stop("TBD")
+}
+
+gen.plas1=function(ofn.fasta, ofn.table)
 {
     stop("TBD")
 }
